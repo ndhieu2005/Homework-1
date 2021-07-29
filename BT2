@@ -1,0 +1,115 @@
+#Bài 1: Xoá đi phần tử của list
+game= (['LOL','PUBG','CSGO'])
+game.pop()
+#Bài 2 Tính giai thừa
+n = int(input("Nhap"))
+def Giaithua(n):
+    if n==0:
+        return 1
+    return n * Giaithua(n-1)
+print (Giaithua(n))
+#Bài 3:Tính chữ cái thường và viết hoa
+def show(s):
+    count_upper = 0
+    count_lower = 0
+    for c in s:
+        if c.isupper():
+            count_upper += 1
+        if c.islower():
+            count_lower += 1
+
+    print("Given string:", s)
+    print("Number of uppercase letters:", count_upper)
+    print("Number of lowercase letters:", count_lower)
+s = str(input())
+show(s)
+#Bài 4: Tính tổng các phần tử trong list
+nums = [1,2,3,4,5,6,7,8,9,]
+sum = 0
+for num in nums:
+    sum = sum + num
+sum
+#Bài 5:Đếm số chữ
+print(len('Chào'))
+len("Hello")
+#Bài 6: Xoá khỏi list những từ bị lặp
+list=['abc','xyz','abc','12','ii','12','5a']
+list2=[]
+for i in _list:
+    if list.count(i) == 1:
+        list2.append(i)
+list2
+    #Bài 7:
+test_case = int(input())
+while test_case !=0 :
+    n = int(input())
+    print(2)
+    second = n
+    first = n-1
+    for i in range(n-1,-1):
+        print(first,second)
+        second = (second + first + 1)//2
+        first -= 1
+        test_case -=1
+#Bài 8
+def calc(p = []):
+    n = len(p)
+    for i in range(0,n-2):
+        for j in range(i+1,n-1):
+            for k in range(j+1,n):
+                if p[i] < p[j] and p[j] > p[k]:
+                    return True, i , j ,k
+    return False, -1 , -1 , -1    
+test_case = int(input())
+while test_case != 0:
+    n = int(input())
+    tmp = list(input().split(' '))
+    _inlist = []
+    for i in tmp:
+        _inlist.append(int(i))
+    valid, i, j, k = calc(_inlist)
+    if valid:
+        print('Yes')
+        print(i+1,j+1,k+1)
+    else:
+        print('No')
+    test_case -=1 
+#Bài 9
+def cmp_string(a,b):
+    n = max(len(a),len(b))   #Hàm cộng số 0 vào đầu chuỗi str ngắn hơn cho 2 chuỗi có độ dài = nhau
+    if len(a) != n:
+        for i in range(1,n - len(a)+ 1):
+            a = '0' + a
+    else:
+        for i in range(1,n - len(b)+1):
+            b = '0' + b
+    return a,b
+def erase_0(wrong):      #Xoá số 0 đứng trước
+    str_ = wrong[::-1]
+    index = 0
+    for i, j in enumerate(str_):
+        if j !='0':
+            index = i
+            break
+    return str_[index:]
+
+def add(a,b):
+    ans = ''       #thực hiện cộng
+    rem = 0
+    n = len(a)
+    for index in range(0,n):
+        var = (int(a[n-index-1]) + int(b[n-index-1]) + rem)%10
+        ans += str(var)
+        rem = (int(a[n-index-1]) + int(b[n-index-1]) + rem)//10
+        #để print(ans,rem)
+    if rem != 0:
+        ans += str(rem)
+    return erase_0(ans)
+
+if __name__ == "__main__":
+    
+    a = '1000001'
+    b = '000009'
+    a,b = cmp_string(a,b)
+    c = add(a,b)
+    print (c)

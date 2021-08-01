@@ -1,0 +1,63 @@
+#LIST
+#Bài 1
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+list(set(a) & set(b))
+
+#Bài 2
+#MATH
+#Bài 1
+netAmount = 0
+while True:
+    s = input("Nhập nhật ký giao dịch: ")
+    if not s:
+        break
+    values = s.split(" ")
+    operation = values[0]
+    amount = int(values[1])
+    if operation=="D":
+         netAmount+=amount
+    elif operation=="W":
+        netAmount-=amount
+    else:
+        pass
+print (netAmount)
+#Bài 2
+def fibonacci(n):
+    f0 = 0;
+    f1 = 1;
+    fn = 1;
+ 
+    if (n < 0):
+        return -1;
+    elif (n == 0 or n == 1):
+        return n;
+    else:
+        for i in range(2, n):
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        return fn;
+print("7 số đầu tiên của dãy số fibonacci: ");
+sb = "";
+for i in range(0, 7):
+    sb = sb + str(fibonacci(i)) + ", ";
+print(sb)
+
+#DICT
+#Bài 1
+n=int(input('Nhập 1 số:'))
+d=dict()
+for i in range(1,n+1):
+    d[i]=i*i
+
+print (d)
+#Bài 2
+def dict(i):
+    for i in range (1,10):
+        i = i**2
+print (dict(i))        
+        
+    

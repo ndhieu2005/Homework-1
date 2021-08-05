@@ -1,0 +1,40 @@
+#Bài 2: kiểm tra số hoàn hảo
+n=int(input())
+def perfectcheck(n):
+    total = 0
+    for i in range(1,n):
+        if n%i == 0:
+            total += i
+        if total == n:
+            return True
+        else:
+            return False 
+if perfectcheck(n):
+    print(n,'perfect')
+else:
+    print(n,'non perfect')
+#Bài 3:
+num = int(input('Nhập số phần tử của list:'))
+dict = []
+for i in range(num):
+    val = input('Nhập giá trị:')
+    dict.append(val)
+print(dict)    
+from collections import Counter
+Counter(dict)
+#Bài 4:
+inputchuoi = input()
+dict = []
+for i in range(inputchuoi):
+    blanket = input('Nhập:')
+def check(n):
+    if n == i:
+        return True
+    else n=!i:
+        return False
+if check(n):
+    print(True)
+else:
+    print(False)
+    
+

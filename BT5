@@ -1,0 +1,53 @@
+def check(s):
+    stack =[]
+    dict1 = {')':'(' , ']':'[' , '}':'{'}
+    for letter in s:
+        if letter not in dict1:
+            stack.append(letter)
+        else:
+            if len(stack)>0 and stack[-1] == dict1[letter]:
+                stack.pop()
+            else:
+                return False
+    return len(stack)==0    
+    check('[]{}()')
+    True
+    check('[[]]]]]')
+    False
+    check('((())))){{}{}}}}')
+    False
+    #Bài 2:
+    def priority(op):
+    if op == '+':
+        return 0
+    if op == '-':
+        return 1
+    else:
+        return 2 #EM QUÊN MẤT CÁCH CODE BÀI NÀY :))))))
+    
+def process(val,op):
+    r = val.pop()
+    l = val.pop()
+    if op == '+':
+        val.append(l+r)
+    elif op == '-':
+        val.append(l-r)
+    elif op == '*':
+        val.append(l*r)
+    elif op == '/':
+        val.append(l/r)
+        
+    return  val
+def isdigit(c):
+    f = False 
+    valid ='01234566789'
+    return valid.find(c) != -1
+
+def evaluate(s):
+    val = []
+    op  = []
+    for i in s:
+        if isdigit(i) is True:
+            val.append(int(i))
+        else:
+            while len(op)!=0 and prior
